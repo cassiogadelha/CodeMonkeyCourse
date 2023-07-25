@@ -30,5 +30,8 @@ public class Player : MonoBehaviour
 
         Vector3 moveDir = new(inputVector.x, 0, inputVector.y);
         transform.position += moveSpeed * Time.deltaTime * moveDir;
+
+        float rotationSpeed = 10f;
+        transform.forward = Vector3.Slerp(transform.forward, moveDir, rotationSpeed * Time.deltaTime);
     }
 }
