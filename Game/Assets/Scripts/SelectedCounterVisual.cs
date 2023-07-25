@@ -9,10 +9,10 @@ public class SelectedCounterVisual : MonoBehaviour
     [SerializeField] private GameObject visualGameObject;
     private void Start()
     {
-        Player.Instance.OnSelectedCounterChanged += Instance_OnSelectedCounterChanged;
+        Player.Instance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;
     }
 
-    private void Instance_OnSelectedCounterChanged(object sender, Player.OnSelectedCounterChangedEventArgs e)
+    private void Player_OnSelectedCounterChanged(object sender, Player.OnSelectedCounterChangedEventArgs e)
     {
         if(e.selectedCounter == clearCounter)
         {
@@ -20,7 +20,7 @@ public class SelectedCounterVisual : MonoBehaviour
         }
         else
         {
-            Hidden();
+            Hide();
         }
     }
 
@@ -29,7 +29,7 @@ public class SelectedCounterVisual : MonoBehaviour
         visualGameObject.SetActive(true);
     }
 
-    private void Hidden()
+    private void Hide()
     {
         visualGameObject.SetActive(false);
     }
