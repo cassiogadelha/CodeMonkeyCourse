@@ -69,15 +69,15 @@ public class Player : MonoBehaviour
                 {
                     SetSelectedCounter(clearCounter);
                 }
-                else
-                {
-                    SetSelectedCounter(null);
-                }
             }
             else
             {
                 SetSelectedCounter(null);
             }
+        }
+        else
+        {
+            SetSelectedCounter(null); 
         }
     }
 
