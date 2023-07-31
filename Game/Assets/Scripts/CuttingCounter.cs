@@ -32,7 +32,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
             }
             else
             {
-
+    
             }
         }
         else
