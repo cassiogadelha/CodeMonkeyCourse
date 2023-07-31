@@ -422,6 +422,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7095685389762320655}
     m_Modifications:
+    - target: {fileID: 330043717022219852, guid: 10e39c981f2de6441b54efde32ced8f0,
+        type: 3}
+      propertyPath: plateKitchenObject
+      value: 
+      objectReference: {fileID: 5675838289567250420}
     - target: {fileID: 408889407006782756, guid: 10e39c981f2de6441b54efde32ced8f0,
         type: 3}
       propertyPath: m_RootOrder
