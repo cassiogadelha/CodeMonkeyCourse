@@ -33,12 +33,12 @@ public class GamePausedUI : MonoBehaviour
 
     private void GameManager_OnGameUnpaused(object sender, System.EventArgs e)
     {
-        Show();
+        Hide();
     }
 
     private void GameManager_OnGamePaused(object sender, System.EventArgs e)
     {
-        Hide();
+        Show();
     }
 
     private void Show()
