@@ -20,7 +20,8 @@ public class GamePausedUI : MonoBehaviour
         });
         optionsButton.onClick.AddListener(() =>
         {
-            OptionsUI.Instance.Show();
+            Hide();
+            OptionsUI.Instance.Show(Show);
         });
     }
     private void Start()

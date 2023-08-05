@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -31,6 +32,7 @@ public class OptionsUI : MonoBehaviour
     [SerializeField] private Button interactAlternateButton;
     [SerializeField] private Button pauseButton;
 
+    private Action onCloseButtonAction;
 
     [SerializeField] Transform pressToRebindKeyTransform;
 
@@ -51,7 +53,9 @@ public class OptionsUI : MonoBehaviour
         closeButton.onClick.AddListener(() =>
         {
             Hide();
+            onCloseButtonAction();
         });
+
         moveUpButton.onClick.AddListener(() => { RebindBinding(GameInput.Binding.Move_Up); });
         moveDownButton.onClick.AddListener(() => { RebindBinding(GameInput.Binding.Move_Down); });
         moveLeftButton.onClick.AddListener(() => { RebindBinding(GameInput.Binding.Move_Left); });
@@ -86,8 +90,9 @@ public class OptionsUI : MonoBehaviour
         interactAlternateText.text = GameInput.Instance.GetBindingText(GameInput.Binding.InteractAlternate);
         pauseText.text = GameInput.Instance.GetBindingText(GameInput.Binding.Pause);
     }
-    public void Show()
+    public void Show(Action onCloseButtonAction)
     {
+        this.onCloseButtonAction = onCloseButtonAction;
         gameObject.SetActive(true);
     }
     public void Hide()

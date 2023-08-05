@@ -72,6 +72,14 @@ public class SoundManager : MonoBehaviour
     {
         PlaySound(audioClipsRefsSO.footstep, position, volumeMultiplier * volume);
     }
+    public void PlayCountdownSound()
+    {
+        PlaySound(audioClipsRefsSO.warning, Vector3.zero);
+    }
+    public void PlayWarningSound(Vector3 position)
+    {
+        PlaySound(audioClipsRefsSO.warning, position);
+    }
     public void ChangeVolume()
     {
         volume += .1f;
